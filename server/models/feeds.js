@@ -2,7 +2,13 @@ const PouchDB = require("pouchdb");
 const parseOpml = require("node-opml-parser");
 const bb = require("bluebird");
 const parseFeed = require("node-feedparser");
-const request = require("request-promise");
+let request = require("request-promise");
+request = request.defaults({
+    headers: {
+        'User-Agent': 'cozy-reader'
+    },
+    followAllRedirects: true
+})
 //require('request-debug')(request)
 
 class Feeds {
