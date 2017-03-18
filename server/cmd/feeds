@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 require('console.table')
 const bb = require('bluebird')
-const feeds = require('./models/feeds')
-const items = require('./models/items')
+const feeds = require('../models/feeds')
+const items = require('../models/items')
 
 const command = process.argv[2]
 
