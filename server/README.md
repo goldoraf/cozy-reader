@@ -59,7 +59,5 @@ TODO:
  - Make the konnector which do the update of n first udpated feeds
  - A special konnector should be done to import an opml file
  - The handling of the list of items should be on the client application
- - The number of feeds updated in one time should be configurable
  - More precise error handling
- - Some feeds do not work and may need some special headers or should follow redirections
 
