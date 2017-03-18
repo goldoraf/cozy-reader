@@ -1,0 +1,23 @@
+{
+  "name": "cozy-feed-konnector",
+  "version": "0.0.1",
+  "description": "A cozy connector to get items from a list of rss or atom feeds",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "doubleface",
+  "license": "MIT",
+  "dependencies": {
+    "bluebird": "^3.4.7",
+    "console.table": "^0.8.0",
+    "node-feedparser": "^1.0.1",
+    "node-opml-parser": "^1.0.0",
+    "pouchdb": "^6.1.2",
+    "request": "^2.79.0",
+    "request-promise": "^4.1.1"
+  },
+  "devDependencies": {
+    "request-debug": "^0.2.0"
+  }
+}
