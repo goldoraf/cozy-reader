@@ -61,6 +61,8 @@ if (command === 'init') {
 }
 
 if (command === 'fetch') {
+    let count = process.argv[3] ? process.argv[3] : 5
+
     // get the list of feeds sorted by update date
     run = feeds.list()
     .then(list => {
@@ -76,7 +78,7 @@ if (command === 'fetch') {
         // only keep the five first updated
         // TODO the sort should also be done with a proper view request
         list.sort((a, b) => a.updateDate < b.updateDate ? -1 : 1)
-        return list.splice(0, 5)
+        return list.splice(0, count)
     })
     .then(list => {
         // for each feed, get its items and put them in db but without duplicates
@@ -117,7 +119,7 @@ run
     list : get the list of feeds in db
     errors : get the list of feeds in error
     init : init the list of feeds with a given opml file ex: ./feeds init ../db/feeds.opml
-    fetch : Fetch the last 5 updated feeds
+    fetch : Fetch the last count updated feeds ex: ./feeds fetch 5
     clear : clear the list of feeds
 `)
 })
