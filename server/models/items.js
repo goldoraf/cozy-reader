@@ -3,7 +3,7 @@ const bb = require("bluebird");
 
 class Items {
     constructor() {
-        this.db = new PouchDB(__dirname + "/../db/Items");
+        this.db = new PouchDB("http://localhost:3000/db/Items");
     }
 
     clear() {

@@ -1,2 +1,3 @@
 node_modules
 server/db
+server/log.txt

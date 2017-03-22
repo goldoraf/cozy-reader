@@ -1,5 +1,9 @@
 # Server reader implementation
 
+Now an express server with pouchdb middleware has been added. You first need to to run the express
+server before doing anything in the command line.
+The express server serves the root directory of the git repository
+
 This still needs to be adapted to become a connector.
 
 You can give any OPML file to the ```feeds init``` command
@@ -9,6 +13,8 @@ Try :
 ```
 cd server
 npm install
+npm start &
+bg
 ./feeds init path/to/opml/file
 ./feeds fetch
 ```
@@ -56,7 +62,6 @@ the id for items is : <feed_url>:::<item_url>
 TODO:
 
  - A lot!
- - Make the konnector which do the update of n first udpated feeds
  - A special konnector should be done to import an opml file
  - The handling of the list of items should be on the client application
  - More precise error handling

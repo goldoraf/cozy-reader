@@ -13,7 +13,7 @@ request = request.defaults({
 
 class Feeds {
     constructor() {
-        this.db = new PouchDB(__dirname + "/../db/Feeds");
+        this.db = new PouchDB("http://localhost:3000/db/Feeds");
     }
 
     clear() {
