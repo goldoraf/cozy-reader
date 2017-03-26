@@ -27,7 +27,6 @@ Try :
 ```
 cd server
 npm install
-bg
 ./feeds init path/to/opml/file
 ./feeds fetch
 ```
