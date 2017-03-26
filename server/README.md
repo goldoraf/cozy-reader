@@ -1,19 +1,32 @@
 # Server reader implementation
 
-Now an express server with pouchdb middleware has been added. You first need to to run the express
-server before doing anything in the command line.
-The express server serves the root directory of the git repository
+Now the command line part directly talks to the gozy with the condition that some environment
+variables are initialized.
+
+First run a gozy.
+
+Then get the credentials from it using the gettoken command :
+
+```
+cd server
+./gettoken
+Please visit the following url to authorize the application:
+http://cozy.local:8080/auth/authorize?client_id=d471d98ae7773eca4289104b24386e00&redirect_uri=http%3A%2F%2Flocalhost%3A3333%2Fdo_access&state=cG5B3qtjOTtTDu9rtEB0Nw&response_type=code&scope=io.cozy.feeds%20io.cozy.feeditems
+File saved in /home/doubleface/Workspace/cozy-reader/server/token.json
+
+export COZY_CREDENTIALS=$(<./token.json)
+export COZY_URL=http://cozy.local:8080
+```
 
 This still needs to be adapted to become a connector.
 
 You can give any OPML file to the ```feeds init``` command
 
-Try : 
+Try :
 
 ```
 cd server
 npm install
-npm start &
 bg
 ./feeds init path/to/opml/file
 ./feeds fetch
@@ -25,8 +38,7 @@ And get the list of items with :
 ./items list
 ```
 
-All data is save in the server/db directory in a pouchdb database and can be served with
-pouchdb-server
+All data is saved in the cozy!
 
 ## Documents structure
 
