@@ -4,16 +4,22 @@
   "description": "A cozy connector to get items from a list of rss or atom feeds",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js"
   },
   "author": "doubleface",
   "license": "MIT",
   "dependencies": {
     "bluebird": "^3.4.7",
+    "btoa": "^1.1.2",
     "console.table": "^0.8.0",
+    "core-js": "^2.4.1",
+    "cozy-client-js": "^0.1.8",
+    "isomorphic-fetch": "^2.2.1",
     "node-feedparser": "^1.0.1",
     "node-opml-parser": "^1.0.0",
     "pouchdb": "^6.1.2",
+    "pouchdb-find": "^0.10.5",
+    "regenerator-runtime": "^0.10.3",
     "request": "^2.79.0",
     "request-promise": "^4.1.1"
   },
