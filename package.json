@@ -1,6 +1,6 @@
 {
-  "name": "<APP_NAME>",
-  "version": "3.0.0",
+  "name": "cozy-reader",
+  "version": "1.0.0",
   "main": "src/main.jsx",
   "scripts": {
     "build": "npm run build:browser",
@@ -11,7 +11,7 @@
     "commons:build": "webpack --config webpack.config.js --bail",
     "commons:watch": "webpack --config webpack.config.js --watch --display-modules --display-chunks",
     "commons:watch:standalone": "webpack-dev-server --config webpack.config.js --port 8282 --display-modules --display-chunks --inline --hot",
-    "deploy": "git-directory-deploy --username Cozy --email contact@cozycloud.cc --directory build/ --branch build --repo=https://$GITHUB_TOKEN@github.com/<USERNAME_GH>/<SLUG_GH>.git",
+    "deploy": "git-directory-deploy --username Cozy --email contact@cozycloud.cc --directory build/ --branch build --repo=https://$GITHUB_TOKEN@github.com/goldoraf/cozy-reader.git",
     "tx": "tx pull --all || true",
     "precommons:build": "npm-run-all lint tx",
     "prebuild:browser": "npm run clean:browser",
@@ -32,22 +32,22 @@
     "android:run": "cd mobile ; cordova run android --device ; cd ..",
     "android:run:emulator": "cd mobile ; cordova run android --emulator ; cd ..",
     "android:release": "npm run build:mobile && cd mobile ; cordova build android --release ; cd ..",
-    "android:signed": "npm run android:release && cd mobile ; apksigner sign --ks keys/android/<APP_NAME>-release-key.jks --out build/android/<APP_NAME>.apk platforms/android/build/outputs/apk/android-release-unsigned.apk ; cd ..",
+    "android:signed": "npm run android:release && cd mobile ; apksigner sign --ks keys/android/cozy-reader-release-key.jks --out build/android/cozy-reader.apk platforms/android/build/outputs/apk/android-release-unsigned.apk ; cd ..",
     "android:publish": "npm run android:signed && cd mobile ; fastlane supply ; cd ..",
     "ios:run": "cd mobile ; cordova run ios --device ; cd ..",
     "ios:run:emulator": "cd mobile ; cordova run ios --emulator ; cd .."
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/<USERNAME_GH>/<SLUG_GH>.git"
+    "url": "git+https://github.com/goldoraf/cozy-reader.git"
   },
   "author": "Cozy Cloud <contact@cozycloud.cc> (https://cozy.io/)",
   "contributors": [],
   "license": "AGPL-3.0",
   "bugs": {
-    "url": "https://github.com/<USERNAME_GH>/<SLUG_GH>/issues"
+    "url": "https://github.com/goldoraf/cozy-reader/issues"
   },
-  "homepage": "https://github.com/<USERNAME_GH>/<SLUG_GH>#readme",
+  "homepage": "https://github.com/goldoraf/cozy-reader#readme",
   "devDependencies": {
     "autoprefixer": "^6.5.0",
     "babel-core": "^6.0.0",
@@ -101,6 +101,8 @@
     "cozy-ui": "3.0.0-beta19",
     "date-fns": "^1.26.0",
     "node-polyglot": "^2.2.0",
+    "pouchdb": "^6.1.2",
+    "pouchdb-find": "^0.10.5",
     "preact": "^7.1.0",
     "preact-compat": "^3.9.0",
     "react-redux": "^5.0.1",

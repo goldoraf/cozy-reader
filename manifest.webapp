@@ -1,11 +1,11 @@
 {
-  "name": "<APP_NAME>",
-  "slug": "<APP_NAME>",
+  "name": "Cozy Reader",
+  "slug": "reader",
   "icon": "icon.svg",
-  "description": "<APP_SHORT_DESCRIPTION>",
-  "version": "3.0.0",
+  "description": "Cozy feed reader",
+  "version": "1.0.0",
   "licence": "AGPL-3.0",
-  "source": "https://github.com/<USERNAME_GH>/<SLUG_GH>.git@build",
+  "source": "https://github.com/goldoraf/cozy-reader.git@build",
   "developer": {
     "name": "Cozy",
     "url": "https://cozy.io"
@@ -24,6 +24,14 @@
       "description": "Required by the cozy-bar to display the icons of the apps",
       "type": "io.cozy.apps",
       "verbs": ["GET"]
+    },
+    "feeds": {
+      "description": "Required to get the list of your feeds",
+      "type": "io.cozy.feeds"
+    },
+    "files": {
+      "description": "Required to save your feed items",
+      "type": "io.cozy.feeditems"
     }
   }
 }
